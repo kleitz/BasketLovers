@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A70BC21D19AFBF0300229E82 /* DOBRFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A70BC21B19AFBF0300229E82 /* DOBRFirstViewController.m */; };
+		A78292C019BD845200A61419 /* DOBRConfigStaticTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A78292BF19BD845200A61419 /* DOBRConfigStaticTableViewController.m */; };
+		A78512DE19B286040037A9C3 /* DigitalRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A78512DC19B286040037A9C3 /* DigitalRegular.ttf */; };
+		A78512DF19B286040037A9C3 /* kongtext.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A78512DD19B286040037A9C3 /* kongtext.ttf */; };
+		A7AADABC19BF33C00078F6AA /* DOBRSharedStoreCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = A7AADABB19BF33C00078F6AA /* DOBRSharedStoreCoordinator.m */; };
+		A7BDC20319AD361C00BA6B99 /* DOBRGameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A7BDC20219AD361C00BA6B99 /* DOBRGameModel.m */; };
 		A7FFFC6E1962AFB200129F60 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7FFFC6D1962AFB200129F60 /* Foundation.framework */; };
 		A7FFFC701962AFB200129F60 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7FFFC6F1962AFB200129F60 /* CoreGraphics.framework */; };
 		A7FFFC721962AFB200129F60 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7FFFC711962AFB200129F60 /* UIKit.framework */; };
@@ -14,8 +20,6 @@
 		A7FFFC7A1962AFB200129F60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A7FFFC791962AFB200129F60 /* main.m */; };
 		A7FFFC7E1962AFB200129F60 /* DOBRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7FFFC7D1962AFB200129F60 /* DOBRAppDelegate.m */; };
 		A7FFFC811962AFB200129F60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7FFFC7F1962AFB200129F60 /* Main.storyboard */; };
-		A7FFFC841962AFB200129F60 /* DOBRFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7FFFC831962AFB200129F60 /* DOBRFirstViewController.m */; };
-		A7FFFC871962AFB200129F60 /* DOBRSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7FFFC861962AFB200129F60 /* DOBRSecondViewController.m */; };
 		A7FFFC891962AFB200129F60 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7FFFC881962AFB200129F60 /* Images.xcassets */; };
 		A7FFFC901962AFB200129F60 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7FFFC8F1962AFB200129F60 /* XCTest.framework */; };
 		A7FFFC911962AFB200129F60 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7FFFC6D1962AFB200129F60 /* Foundation.framework */; };
@@ -35,6 +39,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A70BC21B19AFBF0300229E82 /* DOBRFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOBRFirstViewController.m; sourceTree = "<group>"; };
+		A70BC21C19AFBF0300229E82 /* DOBRFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOBRFirstViewController.h; sourceTree = "<group>"; };
+		A78292BE19BD845200A61419 /* DOBRConfigStaticTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOBRConfigStaticTableViewController.h; sourceTree = "<group>"; };
+		A78292BF19BD845200A61419 /* DOBRConfigStaticTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOBRConfigStaticTableViewController.m; sourceTree = "<group>"; };
+		A78512DC19B286040037A9C3 /* DigitalRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DigitalRegular.ttf; sourceTree = "<group>"; };
+		A78512DD19B286040037A9C3 /* kongtext.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = kongtext.ttf; sourceTree = "<group>"; };
+		A7AADABA19BF33C00078F6AA /* DOBRSharedStoreCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOBRSharedStoreCoordinator.h; sourceTree = "<group>"; };
+		A7AADABB19BF33C00078F6AA /* DOBRSharedStoreCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOBRSharedStoreCoordinator.m; sourceTree = "<group>"; };
+		A7BDC20119AD361C00BA6B99 /* DOBRGameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOBRGameModel.h; sourceTree = "<group>"; };
+		A7BDC20219AD361C00BA6B99 /* DOBRGameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOBRGameModel.m; sourceTree = "<group>"; };
+		A7D5948E19BB615900F92836 /* constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
 		A7FFFC6A1962AFB200129F60 /* BasketLovers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasketLovers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7FFFC6D1962AFB200129F60 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A7FFFC6F1962AFB200129F60 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -46,10 +61,6 @@
 		A7FFFC7C1962AFB200129F60 /* DOBRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DOBRAppDelegate.h; sourceTree = "<group>"; };
 		A7FFFC7D1962AFB200129F60 /* DOBRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DOBRAppDelegate.m; sourceTree = "<group>"; };
 		A7FFFC801962AFB200129F60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A7FFFC821962AFB200129F60 /* DOBRFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DOBRFirstViewController.h; sourceTree = "<group>"; };
-		A7FFFC831962AFB200129F60 /* DOBRFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DOBRFirstViewController.m; sourceTree = "<group>"; };
-		A7FFFC851962AFB200129F60 /* DOBRSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DOBRSecondViewController.h; sourceTree = "<group>"; };
-		A7FFFC861962AFB200129F60 /* DOBRSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DOBRSecondViewController.m; sourceTree = "<group>"; };
 		A7FFFC881962AFB200129F60 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A7FFFC8E1962AFB200129F60 /* BasketLoversTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasketLoversTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7FFFC8F1962AFB200129F60 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -82,6 +93,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A70BC21E19AFC36C00229E82 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A7BDC20119AD361C00BA6B99 /* DOBRGameModel.h */,
+				A7BDC20219AD361C00BA6B99 /* DOBRGameModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A70BC21F19AFC37800229E82 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A70BC21C19AFBF0300229E82 /* DOBRFirstViewController.h */,
+				A70BC21B19AFBF0300229E82 /* DOBRFirstViewController.m */,
+				A78292BE19BD845200A61419 /* DOBRConfigStaticTableViewController.h */,
+				A78292BF19BD845200A61419 /* DOBRConfigStaticTableViewController.m */,
+				A7AADABA19BF33C00078F6AA /* DOBRSharedStoreCoordinator.h */,
+				A7AADABB19BF33C00078F6AA /* DOBRSharedStoreCoordinator.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A70BC22019AFC38400229E82 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A78512E019B286090037A9C3 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A78512DC19B286040037A9C3 /* DigitalRegular.ttf */,
+				A78512DD19B286040037A9C3 /* kongtext.ttf */,
+			);
+			name = Fonts;
+			path = BasketLoversTests;
+			sourceTree = SOURCE_ROOT;
+		};
 		A7FFFC611962AFB200129F60 = {
 			isa = PBXGroup;
 			children = (
@@ -115,13 +165,13 @@
 		A7FFFC731962AFB200129F60 /* BasketLovers */ = {
 			isa = PBXGroup;
 			children = (
+				A7D5948E19BB615900F92836 /* constants.h */,
 				A7FFFC7C1962AFB200129F60 /* DOBRAppDelegate.h */,
 				A7FFFC7D1962AFB200129F60 /* DOBRAppDelegate.m */,
+				A70BC21E19AFC36C00229E82 /* Model */,
+				A70BC22019AFC38400229E82 /* View */,
+				A70BC21F19AFC37800229E82 /* Controllers */,
 				A7FFFC7F1962AFB200129F60 /* Main.storyboard */,
-				A7FFFC821962AFB200129F60 /* DOBRFirstViewController.h */,
-				A7FFFC831962AFB200129F60 /* DOBRFirstViewController.m */,
-				A7FFFC851962AFB200129F60 /* DOBRSecondViewController.h */,
-				A7FFFC861962AFB200129F60 /* DOBRSecondViewController.m */,
 				A7FFFC881962AFB200129F60 /* Images.xcassets */,
 				A7FFFC741962AFB200129F60 /* Supporting Files */,
 			);
@@ -131,6 +181,7 @@
 		A7FFFC741962AFB200129F60 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A78512E019B286090037A9C3 /* Fonts */,
 				A7FFFC751962AFB200129F60 /* BasketLovers-Info.plist */,
 				A7FFFC761962AFB200129F60 /* InfoPlist.strings */,
 				A7FFFC791962AFB200129F60 /* main.m */,
@@ -235,7 +286,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7FFFC891962AFB200129F60 /* Images.xcassets in Resources */,
+				A78512DF19B286040037A9C3 /* kongtext.ttf in Resources */,
 				A7FFFC781962AFB200129F60 /* InfoPlist.strings in Resources */,
+				A78512DE19B286040037A9C3 /* DigitalRegular.ttf in Resources */,
 				A7FFFC811962AFB200129F60 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,10 +308,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7BDC20319AD361C00BA6B99 /* DOBRGameModel.m in Sources */,
 				A7FFFC7A1962AFB200129F60 /* main.m in Sources */,
-				A7FFFC841962AFB200129F60 /* DOBRFirstViewController.m in Sources */,
+				A7AADABC19BF33C00078F6AA /* DOBRSharedStoreCoordinator.m in Sources */,
 				A7FFFC7E1962AFB200129F60 /* DOBRAppDelegate.m in Sources */,
-				A7FFFC871962AFB200129F60 /* DOBRSecondViewController.m in Sources */,
+				A70BC21D19AFBF0300229E82 /* DOBRFirstViewController.m in Sources */,
+				A78292C019BD845200A61419 /* DOBRConfigStaticTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +518,7 @@
 				A7FFFCA11962AFB200129F60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A7FFFCA21962AFB200129F60 /* Build configuration list for PBXNativeTarget "BasketLoversTests" */ = {
 			isa = XCConfigurationList;
@@ -471,6 +527,7 @@
 				A7FFFCA41962AFB200129F60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

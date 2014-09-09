@@ -13,6 +13,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    [self setupCustomizedAppearanceOptions];
+    
     return YES;
 }
 							
@@ -41,6 +44,76 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+
+#pragma mark - Customization
+
+-(void)setupCustomizedAppearanceOptions {
+    
+    // Title Bar Color
+    //[[UINavigationBar appearance] setBarTintColor:[UIColor redColor]];
+    //Red UNELCO #DF1F2C ; RGB(223,31,44)
+    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0xDF1F2C)];
+    
+    
+    //TabBar tint Color
+    // 1) this will generate a black tab bar
+    [[UITabBar appearance] setBarTintColor:UIColorFromRGB(0xDF1F2C)];
+    // this will give selected icons and text your apps tint color
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+
+    
+    // 2) Set the tabBarItem text appearance for each state that you want to override:
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:10.0f],
+                    NSForegroundColorAttributeName:[UIColor whiteColor]}
+                                             forState:UIControlStateSelected];
+    
+    
+    // doing this results in an easier to read unselected state then the default iOS 7 one
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:10.0f],
+                                                        NSForegroundColorAttributeName:[UIColor colorWithWhite:0.800 alpha:1.000]
+                                                        } forState:UIControlStateNormal];
+    
+    
+    
+    
+    
+    
+
+    // Title Font
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
+    shadow.shadowOffset = CGSizeMake(0, 1);
+    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                           [UIColor whiteColor], NSForegroundColorAttributeName, shadow, NSShadowAttributeName,
+                                                           [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:21.0], NSFontAttributeName, nil]];
+    
+     /*
+     // Custom color for back button
+     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+     
+     // Cutom image for back button
+     [[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"back_btn.png"]];
+     [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"back_btn.png"]];
+     
+     // Custom Image for Nav Title 
+     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"appcoda-logo.png"]];
+
+
+     */
+    //Added Fonts:  KongtextRegular  &   LetsgoDigital-Regular
+    // UIFont *customFont = [UIFont fontWithName:@"JosefinSansStd-Light" size:20];
+    
+    // log all fonts in system
+    /* NSArray *fontFamilies = [UIFont familyNames];
+    for (int i = 0; i < [fontFamilies count]; i++)
+    {
+        NSString *fontFamily = [fontFamilies objectAtIndex:i];
+        NSArray *fontNames = [UIFont fontNamesForFamilyName:[fontFamilies objectAtIndex:i]];
+        NSLog (@"%@: %@", fontFamily, fontNames);
+    }
+    */
 }
 
 @end
