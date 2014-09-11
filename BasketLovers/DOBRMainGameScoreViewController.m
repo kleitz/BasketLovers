@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 David Oliver Barreto Rodríguez. All rights reserved.
 //
 
-#import "DOBRFirstViewController.h"
+#import "DOBRMainGameScoreViewController.h"
 #import "DOBRGameModel.h"
 #import <QuartzCore/QuartzCore.h>
 #import "constants.h"
 
 
-@interface DOBRFirstViewController () <UIAlertViewDelegate, UIActionSheetDelegate, UIDocumentInteractionControllerDelegate>
+@interface DOBRMainGameScoreViewController () <UIAlertViewDelegate, UIActionSheetDelegate, UIDocumentInteractionControllerDelegate>
 
 //Outlets
 @property (weak, nonatomic) IBOutlet UILabel *visitorTeamFoulsLabel;
@@ -72,7 +72,7 @@
 
 
 
-@implementation DOBRFirstViewController
+@implementation DOBRMainGameScoreViewController
 
 #pragma mark - Custom Initializers
 

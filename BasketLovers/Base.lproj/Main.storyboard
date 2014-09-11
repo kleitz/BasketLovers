@@ -353,10 +353,10 @@
             </objects>
             <point key="canvasLocation" x="25" y="-681"/>
         </scene>
-        <!--First View Controller - GameScoreboardViewController-->
+        <!--Main Game Score View Controller - GameScoreboardViewController-->
         <scene sceneID="BV1-TH-vM7">
             <objects>
-                <viewController title="GameScoreboardViewController" id="s3j-bG-j7s" customClass="DOBRFirstViewController" sceneMemberID="viewController">
+                <viewController title="GameScoreboardViewController" id="s3j-bG-j7s" customClass="DOBRMainGameScoreViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="p9Q-qw-yRY"/>
                         <viewControllerLayoutGuide type="bottom" id="gTt-nb-by9"/>

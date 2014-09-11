@@ -10,6 +10,6 @@
 
 
 
-@interface DOBRFirstViewController : UIViewController
+@interface DOBRMainGameScoreViewController : UIViewController
 
 @end
