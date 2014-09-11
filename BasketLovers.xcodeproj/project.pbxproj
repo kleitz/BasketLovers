@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		A70BC21D19AFBF0300229E82 /* DOBRFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A70BC21B19AFBF0300229E82 /* DOBRFirstViewController.m */; };
+		A7302B0719C229CF0051DF4D /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7302B0419C229CF0051DF4D /* PageContentViewController.m */; };
+		A7302B0819C229CF0051DF4D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7302B0619C229CF0051DF4D /* ViewController.m */; };
+		A7302B0E19C22A590051DF4D /* page1.png in Resources */ = {isa = PBXBuildFile; fileRef = A7302B0A19C22A590051DF4D /* page1.png */; };
+		A7302B0F19C22A590051DF4D /* page2.png in Resources */ = {isa = PBXBuildFile; fileRef = A7302B0B19C22A590051DF4D /* page2.png */; };
+		A7302B1019C22A590051DF4D /* page3.png in Resources */ = {isa = PBXBuildFile; fileRef = A7302B0C19C22A590051DF4D /* page3.png */; };
+		A7302B1119C22A590051DF4D /* page4.png in Resources */ = {isa = PBXBuildFile; fileRef = A7302B0D19C22A590051DF4D /* page4.png */; };
+		A7302B1419C22AE10051DF4D /* DOBRMainTabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7302B1319C22AE10051DF4D /* DOBRMainTabbarViewController.m */; };
 		A78292C019BD845200A61419 /* DOBRConfigStaticTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A78292BF19BD845200A61419 /* DOBRConfigStaticTableViewController.m */; };
 		A78512DE19B286040037A9C3 /* DigitalRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A78512DC19B286040037A9C3 /* DigitalRegular.ttf */; };
 		A78512DF19B286040037A9C3 /* kongtext.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A78512DD19B286040037A9C3 /* kongtext.ttf */; };
@@ -41,6 +48,16 @@
 /* Begin PBXFileReference section */
 		A70BC21B19AFBF0300229E82 /* DOBRFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOBRFirstViewController.m; sourceTree = "<group>"; };
 		A70BC21C19AFBF0300229E82 /* DOBRFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOBRFirstViewController.h; sourceTree = "<group>"; };
+		A7302B0319C229CF0051DF4D /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
+		A7302B0419C229CF0051DF4D /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
+		A7302B0519C229CF0051DF4D /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A7302B0619C229CF0051DF4D /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A7302B0A19C22A590051DF4D /* page1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page1.png; sourceTree = "<group>"; };
+		A7302B0B19C22A590051DF4D /* page2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page2.png; sourceTree = "<group>"; };
+		A7302B0C19C22A590051DF4D /* page3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page3.png; sourceTree = "<group>"; };
+		A7302B0D19C22A590051DF4D /* page4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page4.png; sourceTree = "<group>"; };
+		A7302B1219C22AE10051DF4D /* DOBRMainTabbarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOBRMainTabbarViewController.h; sourceTree = "<group>"; };
+		A7302B1319C22AE10051DF4D /* DOBRMainTabbarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOBRMainTabbarViewController.m; sourceTree = "<group>"; };
 		A78292BE19BD845200A61419 /* DOBRConfigStaticTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOBRConfigStaticTableViewController.h; sourceTree = "<group>"; };
 		A78292BF19BD845200A61419 /* DOBRConfigStaticTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOBRConfigStaticTableViewController.m; sourceTree = "<group>"; };
 		A78512DC19B286040037A9C3 /* DigitalRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DigitalRegular.ttf; sourceTree = "<group>"; };
@@ -105,12 +122,18 @@
 		A70BC21F19AFC37800229E82 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A7302B0319C229CF0051DF4D /* PageContentViewController.h */,
+				A7302B0419C229CF0051DF4D /* PageContentViewController.m */,
+				A7302B0519C229CF0051DF4D /* ViewController.h */,
+				A7302B0619C229CF0051DF4D /* ViewController.m */,
 				A70BC21C19AFBF0300229E82 /* DOBRFirstViewController.h */,
 				A70BC21B19AFBF0300229E82 /* DOBRFirstViewController.m */,
 				A78292BE19BD845200A61419 /* DOBRConfigStaticTableViewController.h */,
 				A78292BF19BD845200A61419 /* DOBRConfigStaticTableViewController.m */,
 				A7AADABA19BF33C00078F6AA /* DOBRSharedStoreCoordinator.h */,
 				A7AADABB19BF33C00078F6AA /* DOBRSharedStoreCoordinator.m */,
+				A7302B1219C22AE10051DF4D /* DOBRMainTabbarViewController.h */,
+				A7302B1319C22AE10051DF4D /* DOBRMainTabbarViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -120,6 +143,17 @@
 			children = (
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		A7302B0919C22A410051DF4D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A7302B0A19C22A590051DF4D /* page1.png */,
+				A7302B0B19C22A590051DF4D /* page2.png */,
+				A7302B0C19C22A590051DF4D /* page3.png */,
+				A7302B0D19C22A590051DF4D /* page4.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		A78512E019B286090037A9C3 /* Fonts */ = {
@@ -181,6 +215,7 @@
 		A7FFFC741962AFB200129F60 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A7302B0919C22A410051DF4D /* Images */,
 				A78512E019B286090037A9C3 /* Fonts */,
 				A7FFFC751962AFB200129F60 /* BasketLovers-Info.plist */,
 				A7FFFC761962AFB200129F60 /* InfoPlist.strings */,
@@ -287,6 +322,10 @@
 			files = (
 				A7FFFC891962AFB200129F60 /* Images.xcassets in Resources */,
 				A78512DF19B286040037A9C3 /* kongtext.ttf in Resources */,
+				A7302B0F19C22A590051DF4D /* page2.png in Resources */,
+				A7302B0E19C22A590051DF4D /* page1.png in Resources */,
+				A7302B1019C22A590051DF4D /* page3.png in Resources */,
+				A7302B1119C22A590051DF4D /* page4.png in Resources */,
 				A7FFFC781962AFB200129F60 /* InfoPlist.strings in Resources */,
 				A78512DE19B286040037A9C3 /* DigitalRegular.ttf in Resources */,
 				A7FFFC811962AFB200129F60 /* Main.storyboard in Resources */,
@@ -310,7 +349,10 @@
 			files = (
 				A7BDC20319AD361C00BA6B99 /* DOBRGameModel.m in Sources */,
 				A7FFFC7A1962AFB200129F60 /* main.m in Sources */,
+				A7302B0819C229CF0051DF4D /* ViewController.m in Sources */,
+				A7302B0719C229CF0051DF4D /* PageContentViewController.m in Sources */,
 				A7AADABC19BF33C00078F6AA /* DOBRSharedStoreCoordinator.m in Sources */,
+				A7302B1419C22AE10051DF4D /* DOBRMainTabbarViewController.m in Sources */,
 				A7FFFC7E1962AFB200129F60 /* DOBRAppDelegate.m in Sources */,
 				A70BC21D19AFBF0300229E82 /* DOBRFirstViewController.m in Sources */,
 				A78292C019BD845200A61419 /* DOBRConfigStaticTableViewController.m in Sources */,
