@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PageContentViewController.h"
+#import "DOBROnBoardingContentPageContentViewController.h"
 
-@interface ViewController : UIViewController <UIPageViewControllerDataSource>
+@interface DOBROnBoardingMainViewController : UIViewController <UIPageViewControllerDataSource>
 
 - (IBAction)startWalkthrough:(id)sender;
 @property (strong, nonatomic) UIPageViewController *pageViewController;

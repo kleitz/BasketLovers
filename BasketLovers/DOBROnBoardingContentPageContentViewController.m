@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 Appcoda. All rights reserved.
 //
 
-#import "PageContentViewController.h"
+#import "DOBROnBoardingContentPageContentViewController.h"
 
-@interface PageContentViewController ()
+@interface DOBROnBoardingContentPageContentViewController ()
 
 @end
 
-@implementation PageContentViewController
+@implementation DOBROnBoardingContentPageContentViewController
 
 
 -(void)setup
@@ -48,6 +48,7 @@
 }
 
 -(void)setupPageController {
+    
     // Override point for customization after application launch.
     UIPageControl *pageControl = [UIPageControl appearance];
     pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];

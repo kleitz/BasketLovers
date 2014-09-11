@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PageContentViewController : UIViewController
+@interface DOBROnBoardingContentPageContentViewController : UIViewController
 
 // UIPAgeViewController index
 @property NSUInteger pageIndex;

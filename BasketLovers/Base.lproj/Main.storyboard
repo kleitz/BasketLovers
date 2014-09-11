@@ -651,10 +651,10 @@
             </objects>
             <point key="canvasLocation" x="1745" y="904"/>
         </scene>
-        <!--View Controller - New Features-->
+        <!--On Boarding Main View Controller - New Features-->
         <scene sceneID="8g9-2V-GuX">
             <objects>
-                <viewController id="g6x-cz-73Q" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="g6x-cz-73Q" customClass="DOBROnBoardingMainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9Th-Pd-FSp"/>
                         <viewControllerLayoutGuide type="bottom" id="265-8Y-lrP"/>
@@ -689,10 +689,10 @@
             </objects>
             <point key="canvasLocation" x="662" y="-1064"/>
         </scene>
-        <!--Page Content View Controller-->
+        <!--On Boarding Content Page Content View Controller-->
         <scene sceneID="P4k-eG-S3L">
             <objects>
-                <viewController storyboardIdentifier="PageContentViewController" id="Nu9-A5-Cgf" customClass="PageContentViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PageContentViewController" id="Nu9-A5-Cgf" customClass="DOBROnBoardingContentPageContentViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PYu-os-oHV"/>
                         <viewControllerLayoutGuide type="bottom" id="xhu-8l-FYl"/>

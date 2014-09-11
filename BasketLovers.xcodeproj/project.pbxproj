@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A70BC21D19AFBF0300229E82 /* DOBRFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A70BC21B19AFBF0300229E82 /* DOBRFirstViewController.m */; };
-		A7302B0719C229CF0051DF4D /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7302B0419C229CF0051DF4D /* PageContentViewController.m */; };
-		A7302B0819C229CF0051DF4D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7302B0619C229CF0051DF4D /* ViewController.m */; };
+		A7302B0719C229CF0051DF4D /* DOBROnBoardingContentPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7302B0419C229CF0051DF4D /* DOBROnBoardingContentPageContentViewController.m */; };
+		A7302B0819C229CF0051DF4D /* DOBROnBoardingMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7302B0619C229CF0051DF4D /* DOBROnBoardingMainViewController.m */; };
 		A7302B0E19C22A590051DF4D /* page1.png in Resources */ = {isa = PBXBuildFile; fileRef = A7302B0A19C22A590051DF4D /* page1.png */; };
 		A7302B0F19C22A590051DF4D /* page2.png in Resources */ = {isa = PBXBuildFile; fileRef = A7302B0B19C22A590051DF4D /* page2.png */; };
 		A7302B1019C22A590051DF4D /* page3.png in Resources */ = {isa = PBXBuildFile; fileRef = A7302B0C19C22A590051DF4D /* page3.png */; };
@@ -48,10 +48,10 @@
 /* Begin PBXFileReference section */
 		A70BC21B19AFBF0300229E82 /* DOBRFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOBRFirstViewController.m; sourceTree = "<group>"; };
 		A70BC21C19AFBF0300229E82 /* DOBRFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOBRFirstViewController.h; sourceTree = "<group>"; };
-		A7302B0319C229CF0051DF4D /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
-		A7302B0419C229CF0051DF4D /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
-		A7302B0519C229CF0051DF4D /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A7302B0619C229CF0051DF4D /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A7302B0319C229CF0051DF4D /* DOBROnBoardingContentPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOBROnBoardingContentPageContentViewController.h; sourceTree = "<group>"; };
+		A7302B0419C229CF0051DF4D /* DOBROnBoardingContentPageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOBROnBoardingContentPageContentViewController.m; sourceTree = "<group>"; };
+		A7302B0519C229CF0051DF4D /* DOBROnBoardingMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOBROnBoardingMainViewController.h; sourceTree = "<group>"; };
+		A7302B0619C229CF0051DF4D /* DOBROnBoardingMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOBROnBoardingMainViewController.m; sourceTree = "<group>"; };
 		A7302B0A19C22A590051DF4D /* page1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page1.png; sourceTree = "<group>"; };
 		A7302B0B19C22A590051DF4D /* page2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page2.png; sourceTree = "<group>"; };
 		A7302B0C19C22A590051DF4D /* page3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page3.png; sourceTree = "<group>"; };
@@ -122,10 +122,6 @@
 		A70BC21F19AFC37800229E82 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A7302B0319C229CF0051DF4D /* PageContentViewController.h */,
-				A7302B0419C229CF0051DF4D /* PageContentViewController.m */,
-				A7302B0519C229CF0051DF4D /* ViewController.h */,
-				A7302B0619C229CF0051DF4D /* ViewController.m */,
 				A70BC21C19AFBF0300229E82 /* DOBRFirstViewController.h */,
 				A70BC21B19AFBF0300229E82 /* DOBRFirstViewController.m */,
 				A78292BE19BD845200A61419 /* DOBRConfigStaticTableViewController.h */,
@@ -134,6 +130,10 @@
 				A7AADABB19BF33C00078F6AA /* DOBRSharedStoreCoordinator.m */,
 				A7302B1219C22AE10051DF4D /* DOBRMainTabbarViewController.h */,
 				A7302B1319C22AE10051DF4D /* DOBRMainTabbarViewController.m */,
+				A7302B0519C229CF0051DF4D /* DOBROnBoardingMainViewController.h */,
+				A7302B0619C229CF0051DF4D /* DOBROnBoardingMainViewController.m */,
+				A7302B0319C229CF0051DF4D /* DOBROnBoardingContentPageContentViewController.h */,
+				A7302B0419C229CF0051DF4D /* DOBROnBoardingContentPageContentViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -349,8 +349,8 @@
 			files = (
 				A7BDC20319AD361C00BA6B99 /* DOBRGameModel.m in Sources */,
 				A7FFFC7A1962AFB200129F60 /* main.m in Sources */,
-				A7302B0819C229CF0051DF4D /* ViewController.m in Sources */,
-				A7302B0719C229CF0051DF4D /* PageContentViewController.m in Sources */,
+				A7302B0819C229CF0051DF4D /* DOBROnBoardingMainViewController.m in Sources */,
+				A7302B0719C229CF0051DF4D /* DOBROnBoardingContentPageContentViewController.m in Sources */,
 				A7AADABC19BF33C00078F6AA /* DOBRSharedStoreCoordinator.m in Sources */,
 				A7302B1419C22AE10051DF4D /* DOBRMainTabbarViewController.m in Sources */,
 				A7FFFC7E1962AFB200129F60 /* DOBRAppDelegate.m in Sources */,
