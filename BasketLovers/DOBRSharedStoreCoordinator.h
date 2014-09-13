@@ -14,8 +14,8 @@
 +(DOBRSharedStoreCoordinator *)sharedStoreCoordinator;
 
 // NSUserDefaults User Configuration
--(void)saveUserDefaultsConfig:(NSDictionary *)configInfo;
--(NSDictionary *)loadUserDefaultsConfig;
+-(void)userDefaultsConfig:(NSDictionary *)configInfo;
+-(NSMutableDictionary *)loadUserDefaultsConfig;
 
 // TODO Game History
 

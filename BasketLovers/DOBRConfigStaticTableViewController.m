@@ -34,6 +34,14 @@
 @property (strong, nonatomic) UIImagePickerController *imagePicker;
 @property (strong, nonatomic)  UIImageView *imageSelected;
 
+
+// Properties
+
+// NSUserDefaults User Configuration
+@property (strong, nonatomic) NSMutableDictionary *configDictionary;
+
+
+
 @end
 
 @implementation DOBRConfigStaticTableViewController
@@ -41,6 +49,33 @@
 
 
 #pragma mark - Custom Initializers
+
+-(NSMutableDictionary *)configDictionary {
+    
+    if (!_configDictionary) {
+        
+        _configDictionary = [NSMutableDictionary dictionaryWithDictionary:@{
+                                                                                        
+          // MY TEAM
+            @"BL_UserConfig_myteamName" : @"",
+            @"BL_UserConfig_myteamTournament" : @"",
+          
+          // MY PLAYER
+            @"BL_UserConfig_myplayerName" : @"",
+            @"BL_UserConfig_myplayerScoreIsActivated" : @YES,
+          
+          // GAME
+            @"BL_UserConfig_gameNumberOfPeriods" : @4,
+            @"BL_UserConfig_gamePeriodTime": @10,
+            @"BL_UserConfig_gameFoulsToBonus" : @5,
+            @"BL_UserConfig_gamePlayerFouls" : @5,
+        }];
+    }
+        
+    return _configDictionary;
+    
+}
+
 
 -(UIImagePickerController *)imagePicker {
 
@@ -83,31 +118,36 @@
     
     [self setupGestureRecognizers];
 
+}
+
+
+-(void)viewWillAppear:(BOOL)animated {
     
     // Preload User Defaults
-    [[DOBRSharedStoreCoordinator sharedStoreCoordinator] loadUserDefaultsConfig];
+    self.configDictionary = [[DOBRSharedStoreCoordinator sharedStoreCoordinator] loadUserDefaultsConfig];
+    
+    [self preloadUserDefaults];
+    
 }
+
 
 -(void)viewWillDisappear:(BOOL)animated {
     
     // Save on exit
+    [self saveConfig];
     
-    NSDictionary *config = [[NSDictionary alloc] init];
-    [[DOBRSharedStoreCoordinator sharedStoreCoordinator] saveUserDefaultsConfig:config];
-    //[self saveConfig];
+    [[DOBRSharedStoreCoordinator sharedStoreCoordinator] userDefaultsConfig:self.configDictionary];
+    
 }
 
--(void)viewWillAppear:(BOOL)animated {
-    
-    // Preload when on screen
-    [self preloadUserDefaults];
-}
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 #pragma mark - Table view data source
 /*
@@ -419,7 +459,7 @@
     }
     
     
-    self.imageSelected = senderGesture.view;
+    self.imageSelected = (UIImageView *)senderGesture.view;
     
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Pick Photo Source"
                                                              delegate:self
@@ -437,26 +477,49 @@
 
 
 
-
 -(void)preloadUserDefaults {
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
     // MY TEAM
-    self.myteamNameText.text = [defaults objectForKey:@"BL_UserConfig_myteamName"];
-    self.myteamTournamentText.text = [defaults objectForKey:@"BL_UserConfig_myteamTournament"];
+    self.myteamNameText.text = [self.configDictionary objectForKey:@"BL_UserConfig_myteamName"];
+    self.myteamTournamentText.text = [self.configDictionary objectForKey:@"BL_UserConfig_myteamTournament"];
     
     
     // MY PLAYER
-    self.myplayerNameText.text = [defaults objectForKey:@"BL_UserConfig_myplayerName"];
-    self.myplayerScoreIsActivatedSwitch.selected = [defaults boolForKey:@"BL_UserConfig_myplayerScoreIsActivated"];
+    self.myplayerNameText.text = [self.configDictionary objectForKey:@"BL_UserConfig_myplayerName"];
+    self.myplayerScoreIsActivatedSwitch.on = [[self.configDictionary objectForKey:@"BL_UserConfig_myplayerScoreIsActivated"] boolValue];
     
     // GAME
-    self.gameNumberOfPeriodsSegmentedControl.selectedSegmentIndex = [defaults integerForKey:@"BL_UserConfig_gameNumberOfPeriods"];
-    self.gamePeriodTimeSegmentedControl.selectedSegmentIndex = [defaults integerForKey:@"BL_UserConfig_gamePeriodTime"];
-    self.gameFoulsToBonusSegmentedControl.selectedSegmentIndex = [defaults integerForKey:@"BL_UserConfig_gameFoulsToBonus"];
-    self.gamePlayerFoulsSegmentedControl.selectedSegmentIndex = [defaults integerForKey:@"BL_UserConfig_gamePlayerFouls"];
+    for (int segmentIndex = 0; segmentIndex <= self.gameNumberOfPeriodsSegmentedControl.numberOfSegments-1; segmentIndex ++) {
+        if ([[self.gameNumberOfPeriodsSegmentedControl titleForSegmentAtIndex:segmentIndex] intValue] == [[self.configDictionary objectForKey:@"BL_UserConfig_gameNumberOfPeriods"] intValue]) {
+            self.gameNumberOfPeriodsSegmentedControl.selectedSegmentIndex = segmentIndex;
+        }
+    }
+
+    for (int segmentIndex = 0; segmentIndex <= self.gamePeriodTimeSegmentedControl.numberOfSegments-1; segmentIndex ++) {
+        if ([[self.gamePeriodTimeSegmentedControl titleForSegmentAtIndex:segmentIndex] intValue] == [[self.configDictionary objectForKey:@"BL_UserConfig_gameNumberOfPeriods"] intValue]) {
+            self.gamePeriodTimeSegmentedControl.selectedSegmentIndex = segmentIndex;
+        }
+    }
+
+    for (int segmentIndex = 0; segmentIndex <= self.gameFoulsToBonusSegmentedControl.numberOfSegments-1; segmentIndex ++) {
+        if ([[self.gameFoulsToBonusSegmentedControl titleForSegmentAtIndex:segmentIndex] intValue] == [[self.configDictionary objectForKey:@"BL_UserConfig_gameFoulsToBonus"] intValue]) {
+            self.gameFoulsToBonusSegmentedControl.selectedSegmentIndex = segmentIndex;
+        }
+    }
     
+    for (int segmentIndex = 0; segmentIndex <= self.gamePlayerFoulsSegmentedControl.numberOfSegments-1; segmentIndex ++) {
+        if ([[self.gamePlayerFoulsSegmentedControl titleForSegmentAtIndex:segmentIndex] intValue] == [[self.configDictionary objectForKey:@"BL_UserConfig_gamePlayerFouls"] intValue]) {
+            self.gamePlayerFoulsSegmentedControl.selectedSegmentIndex = segmentIndex;
+        }
+    }
+    
+    
+/*
+    self.gameNumberOfPeriodsSegmentedControl.selectedSegmentIndex = [[self.configDictionary objectForKey:@"BL_UserConfig_gameNumberOfPeriods"] intValue];
+    self.gamePeriodTimeSegmentedControl.selectedSegmentIndex = [[self.configDictionary objectForKey:@"BL_UserConfig_gamePeriodTime"] intValue];
+    self.gameFoulsToBonusSegmentedControl.selectedSegmentIndex = [[self.configDictionary objectForKey:@"BL_UserConfig_gameFoulsToBonus"] intValue];
+    self.gamePlayerFoulsSegmentedControl.selectedSegmentIndex = [[self.configDictionary objectForKey:@"BL_UserConfig_gamePlayerFouls"] intValue];
+*/
     
     // Images
     // self.myplayerImageView.image = [UIImage imageNamed:@"player_small"];
@@ -469,42 +532,46 @@
     self.myplayerImageView.image = [self makeRoundedImage:[UIImage imageNamed:@"player_small"]
                                                    radius:(self.myplayerImageView.frame.size.width / 2)];
     
+    NSLog(@"Config Table LOADED Dictionary %@", self.configDictionary);
     NSLog(@"Initial Config Data Loaded from User Defaults");
     
 }
 
+
+
 -(void)saveConfig{
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
     // MY TEAM
-    [defaults setObject:self.myteamNameText.text
+    [self.configDictionary setObject:self.myteamNameText.text
                  forKey:@"BL_UserConfig_myteamName"];
-    [defaults setObject:self.myteamTournamentText.text
+    [self.configDictionary setObject:self.myteamTournamentText.text
                  forKey:@"BL_UserConfig_myteamTournament"];
     
     // MY PLAYER
-    [defaults setObject:self.myplayerNameText.text
+    [self.configDictionary setObject:self.myplayerNameText.text
                  forKey:@"BL_UserConfig_myplayerName"];
-    [defaults setBool:self.myplayerScoreIsActivatedSwitch.state
-               forKey:@"BL_UserConfig_myplayerScoreIsActivated"];
+    [self.configDictionary setObject:[NSNumber numberWithBool:self.myplayerScoreIsActivatedSwitch.on] forKey:@"BL_UserConfig_myplayerScoreIsActivated"];
     
     // GAME
-    [defaults setInteger:self.gameNumberOfPeriodsSegmentedControl.selectedSegmentIndex
-                  forKey:@"BL_UserConfig_gameNumberOfPeriods"];
-    [defaults setInteger:self.gamePeriodTimeSegmentedControl.selectedSegmentIndex
-                  forKey:@"BL_UserConfig_gamePeriodTime"];
-    [defaults setInteger:self.gameFoulsToBonusSegmentedControl.selectedSegmentIndex
-                  forKey:@"BL_UserConfig_gameFoulsToBonus"];
+    [self.configDictionary setObject:[NSNumber numberWithInteger:[[self.gameNumberOfPeriodsSegmentedControl titleForSegmentAtIndex:self.gameNumberOfPeriodsSegmentedControl.selectedSegmentIndex] integerValue]]
+                             forKey:@"BL_UserConfig_gameNumberOfPeriods"];
+
+    [self.configDictionary setObject:[NSNumber numberWithInteger:[[self.gamePeriodTimeSegmentedControl titleForSegmentAtIndex:self.gamePeriodTimeSegmentedControl.selectedSegmentIndex] integerValue]]
+                             forKey:@"BL_UserConfig_gamePeriodTime"];
     
+    [self.configDictionary setObject:[NSNumber numberWithInteger:[[self.gameFoulsToBonusSegmentedControl titleForSegmentAtIndex:self.gameFoulsToBonusSegmentedControl.selectedSegmentIndex] integerValue]] forKey:@"BL_UserConfig_gameFoulsToBonus"];
     
+    [self.configDictionary setObject:[NSNumber numberWithInteger:[[self.gameFoulsToBonusSegmentedControl titleForSegmentAtIndex:self.gamePlayerFoulsSegmentedControl.selectedSegmentIndex] integerValue]] forKey:@"BL_UserConfig_gamePlayerFouls"];
+    ;
+    
+    NSLog(@"Config Table SAVED Dictionary %@", self.configDictionary);
+
     /*
      NSData *imageData = UIImagePNGRepresentation(image);
      
      UIImage *image=[UIImage imageWithData:data];
-     */
-  
-    /*
+
+ 
     // SAVE Image in NSUserDefaults NOT RECOMMENDED... instead go with file paths
     
     
@@ -544,13 +611,14 @@
         return [documentsPath stringByAppendingPathComponent:name];
     }
     
-    */
      
     // Sync
     [defaults synchronize];
     
+    */
     
-    NSLog(@"Configuration Saved to User Defaults");
+    
+    //NSLog(@"Configuration Saved to User Defaults");
     
 }
 

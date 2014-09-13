@@ -590,7 +590,7 @@
         self.gameActionImageViewHomeTeam.alpha = 1.0f;
         
         // Then fades it away after 2 seconds (the cross-fade animation will take 0.5s)
-        [UIView animateWithDuration:1.0 delay:0.0 options:nil animations:^{
+        [UIView animateWithDuration:1.0 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
             // Animate the alpha value of your imageView from 1.0 to 0.0 here
             self.gameActionImageViewHomeTeam.alpha = 0.0f;
         } completion:^(BOOL finished) {
@@ -602,7 +602,7 @@
         self.gameActionImageViewVisitorTeam.alpha = 1.0f;
         
         // Then fades it away after 2 seconds (the cross-fade animation will take 0.5s)
-        [UIView animateWithDuration:1.0 delay:0.0 options:nil animations:^{
+        [UIView animateWithDuration:1.0 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
             // Animate the alpha value of your imageView from 1.0 to 0.0 here
             self.gameActionImageViewVisitorTeam.alpha = 0.0f;
         } completion:^(BOOL finished) {

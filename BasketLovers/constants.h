@@ -10,13 +10,13 @@
 #define BasketLovers_constants_h
 
 // Config GAME
-#define kGameLogicMaxNumberOfBonusFouls 5
-#define kGameLogicMaxNumberOfPersonalFouls 5
 #define kGameLogicMaxNumberOfPeriods 4
 #define kGameLogicPeriodTime 10
+#define kGameLogicMaxNumberOfBonusFouls 5
+#define kGameLogicMaxNumberOfPersonalFouls 5
 
 //Last minute
-#define kGameLocigSecondsToFlashTimer ((10*60)-60)
+#define kGameLocigSecondsToFlashTimer ((kGameLogicPeriodTime*60)-60)
 
 
 
