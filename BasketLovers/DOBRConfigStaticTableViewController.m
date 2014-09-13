@@ -50,31 +50,7 @@
 
 #pragma mark - Custom Initializers
 
--(NSMutableDictionary *)configDictionary {
-    
-    if (!_configDictionary) {
-        
-        _configDictionary = [NSMutableDictionary dictionaryWithDictionary:@{
-                                                                                        
-          // MY TEAM
-            @"BL_UserConfig_myteamName" : @"",
-            @"BL_UserConfig_myteamTournament" : @"",
-          
-          // MY PLAYER
-            @"BL_UserConfig_myplayerName" : @"",
-            @"BL_UserConfig_myplayerScoreIsActivated" : @YES,
-          
-          // GAME
-            @"BL_UserConfig_gameNumberOfPeriods" : @4,
-            @"BL_UserConfig_gamePeriodTime": @10,
-            @"BL_UserConfig_gameFoulsToBonus" : @5,
-            @"BL_UserConfig_gamePlayerFouls" : @5,
-        }];
-    }
-        
-    return _configDictionary;
-    
-}
+
 
 
 -(UIImagePickerController *)imagePicker {
