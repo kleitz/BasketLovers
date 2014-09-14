@@ -15,6 +15,7 @@
     // Override point for customization after application launch.
     
     [self setupCustomizedAppearanceOptions];
+    [self moveInitialImagesFromBundleToDocuments];
     
     return YES;
 }
@@ -115,5 +116,45 @@
     }
     */
 }
+
+-(void) moveInitialImagesFromBundleToDocuments
+{
+    //move all images and use GCD to do it
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+
+        // MYPLAYER IMAGE
+        UIImage *image = [UIImage imageNamed:@"player_small"];
+        NSData *imageData = UIImagePNGRepresentation(image);
+        
+        // Destination URL
+        NSURL *destinationURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"myplayer_defaultimage.png"];
+        
+        // Write image data to user's folder
+        [imageData writeToURL:destinationURL
+                    atomically:YES];
+        
+
+        // MYTEAM IMAGE
+        image = [UIImage imageNamed:@"team_hat_red_small"];
+        imageData = UIImagePNGRepresentation(image);
+        
+        // Destination URL
+        destinationURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"myteam_defaultimage.png"];
+        
+        // Write image data to user's folder
+        [imageData writeToURL:destinationURL
+                   atomically:YES];
+    });
+}
+
+
+- (NSURL *)applicationDocumentsDirectory {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsPath = [paths objectAtIndex:0];
+    NSURL *applicationDocumentsDirectory = [NSURL fileURLWithPath:documentsPath];
+        
+    return applicationDocumentsDirectory;
+}
+
 
 @end

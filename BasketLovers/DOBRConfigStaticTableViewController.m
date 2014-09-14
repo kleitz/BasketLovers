@@ -497,17 +497,43 @@
     self.gamePlayerFoulsSegmentedControl.selectedSegmentIndex = [[self.configDictionary objectForKey:@"BL_UserConfig_gamePlayerFouls"] intValue];
 */
     
-    // Images
+    // IMAGES !!! gets and returns NSString with URL of the file in User's Document Folder
     // self.myplayerImageView.image = [UIImage imageNamed:@"player_small"];
     // self.myteamImageView.image = [UIImage imageNamed:@"team_hat_red_small"];
     
+    // UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:MyURL]]];
+
+    
+    
+    // IMAGES !!! gets and returns NSString with URL of the file in User's Document Folder
+    NSString *imagePath = [self.configDictionary objectForKey:@"BL_UserConfig_myplayerImageView"];
+    
+    if (imagePath) {
+        self.myplayerImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfFile:imagePath]];
+    }
+
+    imagePath = [self.configDictionary objectForKey:@"BL_UserConfig_myteamImageView"];
+    
+    if (imagePath) {
+        self.myteamImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfFile:imagePath]];
+    }
+
+/*
+    self.myteamImageView.image = [self makeRoundedImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[self.configDictionary objectForKey:@"BL_UserConfig_myplayerImageView"]]]]
+                                                 radius:(self.myteamImageView.frame.size.width / 2)];
+    
+    
+    self.myteamImageView.image = [self makeRoundedImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[self.configDictionary objectForKey:@"BL_UserConfig_myplayerImageView"]]]]
+                                                 radius:(self.myteamImageView.frame.size.width / 2)];
+*/
+/*
     self.myteamImageView.image = [self makeRoundedImage:[UIImage imageNamed:@"team_hat_red_small"]
                                                  radius:(self.myteamImageView.frame.size.width / 2)];
     
     
     self.myplayerImageView.image = [self makeRoundedImage:[UIImage imageNamed:@"player_small"]
                                                    radius:(self.myplayerImageView.frame.size.width / 2)];
-    
+*/
     NSLog(@"Config Table LOADED Dictionary %@", self.configDictionary);
     NSLog(@"Initial Config Data Loaded from User Defaults");
     
@@ -539,6 +565,10 @@
     
     [self.configDictionary setObject:[NSNumber numberWithInteger:[[self.gameFoulsToBonusSegmentedControl titleForSegmentAtIndex:self.gamePlayerFoulsSegmentedControl.selectedSegmentIndex] integerValue]] forKey:@"BL_UserConfig_gamePlayerFouls"];
     ;
+    
+    //[self.configDictionary objectForKey:@"BL_UserConfig_myplayerName"];
+    //[self.configDictionary objectForKey:@"BL_UserConfig_myteamImageView"];
+    
     
     NSLog(@"Config Table SAVED Dictionary %@", self.configDictionary);
 
@@ -633,13 +663,65 @@
 
 #pragma mark - UIImagePickerContrller Delegate Methods
 
-
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     self.imageSelected.image = image;
+    
+    // Save Image To File
+    NSData *pngImageData = UIImagePNGRepresentation(image);
+    
+//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//    NSString *documentsPath = [paths objectAtIndex:0]; //Get the docs directory
+//    NSString *filePath = [documentsPath stringByAppendingPathComponent:@"image.png"]; //Add the file name
+    
+    // Get URL to save file
+    NSString *filePath  = @"";
+    NSString *stringForImageKey = @"";
+    
+    if (self.imageSelected.tag == kUIStaticConfig_myplayerImageView) {
+        stringForImageKey = @"BL_UserConfig_myplayerImageView";
+        filePath = [self documentsPathForFileName:@"myplayer_image.png"];
+        
+    } else if (self.imageSelected.tag == kUIStaticConfig_myteamImageView) {
+        stringForImageKey = @"BL_UserConfig_myteamImageView";
+        filePath = [self documentsPathForFileName:@"myteam_image.png"];
+    }
+
+    // Write the file
+    [pngImageData writeToFile:filePath atomically:YES];
+
+    // Save ImagePath To ConfigDictionary
+    [self.configDictionary setObject:filePath
+                              forKey:stringForImageKey];
+    
+    NSLog(@"%@",filePath);
+
+    
+    // Save on exit
+    [self saveConfig];
+    
+    [[DOBRSharedStoreCoordinator sharedStoreCoordinator] userDefaultsConfig:self.configDictionary];
+
+    // Preload User Defaults
+    self.configDictionary = [[DOBRSharedStoreCoordinator sharedStoreCoordinator] loadUserDefaultsConfig];
+    
+    [self preloadUserDefaults];
+
+    
+/*
+ Reading it later works the same way. Build the path like we just did above, then:
+ 
+ NSData *pngData = [NSData dataWithContentsOfFile:filePath];
+ UIImage *image = [UIImage imageWithData:pngData];
+ 
+ 
+ 
+ What you'll probably want to do is make a method that creates path strings for you, since you don't want that code littered everywhere. It might look like this:
+ 
+*/
     
     /*
      NSData *imageData = UIImagePNGRepresentation(image);
@@ -659,6 +741,9 @@
  NSData* imageData = [[NSUserDefaults standardUserDefaults] objectForKey:key];
  UIImage* image = [UIImage imageWithData:imageData];
 
+ 
+ 
+ 
  HOWEVERRRR !!!!
  
  
@@ -680,12 +765,15 @@
     
     // Sync user defaults
     [[NSUserDefaults standardUserDefaults] synchronize];
+
+ 
     Read data:
     
     NSString *imagePath = [[NSUserDefaults standardUserDefaults] objectForKey:kPLDefaultsAvatarUrl];
     if (imagePath) {
         self.avatarImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfFile:imagePath]];
     }
+    
     documentsPathForFileName
     
     - (NSString *)documentsPathForFileName:(NSString *)name {
@@ -697,6 +785,16 @@
 */
 
 }
+
+
+- (NSString *)documentsPathForFileName:(NSString *)name
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsPath = [paths objectAtIndex:0];
+    
+    return [documentsPath stringByAppendingPathComponent:name];
+}
+
 
 @end
 

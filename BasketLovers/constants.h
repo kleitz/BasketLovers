@@ -97,8 +97,8 @@ typedef enum {
     kUIStaticConfig_gameNumberOfPeriodsSegmentedControl,
     kUIStaticConfig_gamePeriodTimeSegmentedControl,
     kUIStaticConfig_gameFoulsToBonusSegmentedControl,
-    kUIStaticConfig_myplayerImageView,
     kUIStaticConfig_myteamImageView,
+    kUIStaticConfig_myplayerImageView,
     
 } GameUITags;
 
